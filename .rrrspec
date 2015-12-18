@@ -1,0 +1,36 @@
+RRRSpec.configure(:client) do |conf|
+  Time.zone_default = Time.find_zone('Asia/Tokyo')
+  conf.redis = { host: 'localhost', port: 6379 }
+
+  conf.packaging_dir = `git rev-parse --show-toplevel`.strip
+  conf.rsync_remote_path = 'rsyncserver.local:/mnt/rrrspec-rsync'
+  conf.rsync_options = %w(
+    --compress
+    --times
+    --recursive
+    --links
+    --perms
+    --inplace
+    --delete
+  ).join(' ')
+
+  conf.spec_files = lambda do
+    Dir.chdir(conf.packaging_dir) do
+      Dir['spec/**{,/*/**}/*_spec.rb'].uniq
+    end
+  end
+
+  conf.setup_command = <<-SETUP
+    bundle install
+  SETUP
+  conf.slave_command = <<-SLAVE
+    bundle exec rrrspec-client slave
+  SLAVE
+
+  conf.taskset_class = 'myapplication'
+  conf.worker_type = 'default'
+  conf.max_workers = 2
+  conf.max_trials = 3
+  conf.unknown_spec_timeout_sec = 8 * 60
+  conf.least_timeout_sec = 60
+end
