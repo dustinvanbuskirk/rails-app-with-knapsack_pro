@@ -16,7 +16,7 @@ dependencies:
     - gem install rrrspec-server
 test:
   pre:
-    - rrrspec-server server --config=rrrspec-server-config.rb
-    - rrrspec-server worker --config=rrrspec-server-config.rb
+    - sudo rrrspec-server server --config=rrrspec-server-config.rb
+    - sudo rrrspec-server worker --config=rrrspec-server-config.rb
   override:
-    - bundle exec rrrspec-client start
+    - sudo bundle exec rrrspec-client start
