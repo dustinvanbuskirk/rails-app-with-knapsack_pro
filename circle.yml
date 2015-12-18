@@ -2,8 +2,6 @@ machine:
   ruby:
     version: 2.2.3
   environment:
-    KNAPSACK_PRO_REPO_PATH: ~/gems/knapsack_pro-ruby
-
     # In production you should use endpoint http://api.knapsackpro.com
     # which is default so it means you don't need to set KNAPSACK_PRO_ENDPOINT
     # Below endpoint is just for internal tests by KnapsackPro developers.
@@ -15,10 +13,6 @@ machine:
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: minitest-token
 dependencies:
   pre:
-    - mkdir ~/gems
-    - cd ~/gems && git clone -b $CIRCLE_BRANCH --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git
-    - cd ~/gems/knapsack_pro-ruby && git branch
-    - cd ~/gems/knapsack_pro-ruby && git log -n 1 | more
     - gem install rrrspec-server
     - rrrspec-server server --config=rrrspec-server-config.rb
     - rrrspec-server worker --config=rrrspec-server-config.rb
