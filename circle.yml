@@ -16,6 +16,7 @@ dependencies:
     - gem install rrrspec-server
 
     - sudo curl -sSL https://get.rvm.io | bash -s stable
+    - sudo rvm install 2.2.3
     - sudo ruby -v
     - sudo gem install bundler
     - sudo gem install rrrspec-server
