@@ -14,8 +14,9 @@ machine:
 dependencies:
   pre:
     - gem install rrrspec-server
+test:
+  pre:
     - rrrspec-server server --config=rrrspec-server-config.rb
     - rrrspec-server worker --config=rrrspec-server-config.rb
-test:
   override:
     - bundle exec rrrspec-client start
