@@ -17,7 +17,7 @@ RRRSpec.configure(:server) do |conf|
     host: 'localhost'
   }
   conf.execute_log_text_path = '/vol/rrrspec-log-texts'
-  conf.pidfile = '~/rrrspec/pids'
+  conf.pidfile = '/home/ubuntu/rrrspec/pids'
 end
 
 RRRSpec.configure(:worker) do |conf|
@@ -36,5 +36,5 @@ RRRSpec.configure(:worker) do |conf|
 
   conf.working_dir = '/mnt/working'
   conf.worker_type = 'default'
-  conf.pidfile = '~/rrrspec/pids'
+  conf.pidfile = '/home/ubuntu/rrrspec/pids'
 end

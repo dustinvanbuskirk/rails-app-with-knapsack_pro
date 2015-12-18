@@ -14,7 +14,7 @@ machine:
 dependencies:
   pre:
     - gem install rrrspec-server
-    - mkdir -p ~/rrrspec/pids
+    - mkdir -p /home/ubuntu/rrrspec/pids
 test:
   pre:
     - rrrspec-server server --config=rrrspec-server-config.rb
