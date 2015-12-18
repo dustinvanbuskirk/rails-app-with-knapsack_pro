@@ -3,7 +3,7 @@ RRRSpec.configure(:client) do |conf|
   conf.redis = { host: 'localhost', port: 6379 }
 
   conf.packaging_dir = `git rev-parse --show-toplevel`.strip
-  conf.rsync_remote_path = 'rsyncserver.local:/mnt/rrrspec-rsync'
+  conf.rsync_remote_path = '/mnt/rrrspec-rsync'
   conf.rsync_options = %w(
     --compress
     --times

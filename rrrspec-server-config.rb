@@ -22,7 +22,7 @@ end
 RRRSpec.configure(:worker) do |conf|
   conf.redis = { host: 'localhost', port: 6379 }
 
-  conf.rsync_remote_path = 'rsyncserver.local:/mnt/rrrspec-rsync'
+  conf.rsync_remote_path = '/mnt/rrrspec-rsync'
   conf.rsync_options = %w(
     --compress
     --times
