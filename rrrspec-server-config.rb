@@ -36,4 +36,5 @@ RRRSpec.configure(:worker) do |conf|
 
   conf.working_dir = '/mnt/working'
   conf.worker_type = 'default'
+  conf.pidfile_directory = '/home/ubuntu'
 end
