@@ -13,7 +13,8 @@ machine:
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: minitest-token
 dependencies:
   pre:
-    - gem install rrrspec-server
+    - gem install specific_install
+    - gem specific_install -l https://github.com/ArturT/rrrspec -b pidfile-directory -d rrrspec-server
 test:
   pre:
     - rrrspec-server server --config=rrrspec-server-config.rb
