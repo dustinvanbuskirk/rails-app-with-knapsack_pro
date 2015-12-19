@@ -22,3 +22,4 @@ test:
     - rrrspec-server worker --config=rrrspec-server-config.rb
   override:
     - bundle exec rrrspec-client start
+    - rrrspec-server worker --config=rrrspec-server-config.rb
