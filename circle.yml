@@ -19,13 +19,7 @@ dependencies:
     - cd ~/gems && git clone -b $CIRCLE_BRANCH --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git
     - cd ~/gems/knapsack_pro-ruby && git branch
     - cd ~/gems/knapsack_pro-ruby && git log -n 1 | more
+    - gem install test-queue
 test:
   override:
-    - bundle exec rake knapsack_pro:rspec:
-        parallel: true
-
-    - bundle exec rake knapsack_pro:cucumber:
-        parallel: true
-
-    - bundle exec rake knapsack_pro:minitest[--verbose]:
-        parallel: true
+    - rspec-queue spec
