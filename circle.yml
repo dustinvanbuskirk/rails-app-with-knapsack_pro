@@ -17,7 +17,7 @@ dependencies:
 test:
   pre:
     - sudo ruby -v
-    - sudo curl -sSL https://get.rvm.io | bash -s stable
+    - sudo curl -sSL https://get.rvm.io | sudo bash -s stable
     - sudo rvm install 2.2.3
     - sudo ruby -v
     - sudo gem install bundler
