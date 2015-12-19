@@ -16,14 +16,7 @@ dependencies:
     - gem install rrrspec-server
 test:
   pre:
-    - sudo ruby -v
-    - sudo curl -sSL https://get.rvm.io | sudo bash -s stable
-    - sudo rvm install 2.2.3
-    - sudo ruby -v
-    - sudo gem install bundler
-    - sudo gem install rrrspec-server
-    - sudo bundle install
-    - sudo rrrspec-server server --config=rrrspec-server-config.rb
-    - sudo rrrspec-server worker --config=rrrspec-server-config.rb
+    - rrrspec-server server --config=rrrspec-server-config.rb
+    - rrrspec-server worker --config=rrrspec-server-config.rb
   override:
-    - sudo bundle exec rrrspec-client start
+    - bundle exec rrrspec-client start
