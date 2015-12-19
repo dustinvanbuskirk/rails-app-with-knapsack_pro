@@ -14,14 +14,15 @@ machine:
 dependencies:
   pre:
     - gem install rrrspec-server
-
-    - sudo curl -sSL https://get.rvm.io | bash -s stable && sudo rvm install 2.2.3
+test:
+  pre:
+    - sudo ruby -v
+    - sudo curl -sSL https://get.rvm.io | bash -s stable
+    - sudo rvm install 2.2.3
     - sudo ruby -v
     - sudo gem install bundler
     - sudo gem install rrrspec-server
     - sudo bundle install
-test:
-  pre:
     - sudo rrrspec-server server --config=rrrspec-server-config.rb
     - sudo rrrspec-server worker --config=rrrspec-server-config.rb
   override:
