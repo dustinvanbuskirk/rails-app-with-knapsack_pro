@@ -19,7 +19,6 @@ dependencies:
 test:
   pre:
     - rrrspec-server server --config=rrrspec-server-config.rb
-    - rrrspec-server worker --config=rrrspec-server-config.rb
   override:
     - bundle exec rrrspec-client start
     - rrrspec-server worker --config=rrrspec-server-config.rb
