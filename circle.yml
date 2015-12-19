@@ -11,10 +11,6 @@ machine:
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: rspec-token
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_CUCUMBER: cucumber-token
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: minitest-token
-dependencies:
-  pre:
-    - gem install test-queue
-    - gem install knapsack_pro
 test:
   override:
     - rspec-queue spec

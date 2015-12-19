@@ -44,6 +44,7 @@ group :development, :test do
   gem 'spring'
 
   gem 'knapsack_pro'
+  gem 'test-queue'
 end
 
 group :test do
