@@ -15,6 +15,7 @@ dependencies:
   pre:
     - gem install specific_install
     - gem specific_install -l https://github.com/ArturT/rrrspec -b pidfile-directory -d rrrspec-server
+    - mkdir -p /home/ubuntu/rrrspec-rsync
 test:
   pre:
     - rrrspec-server server --config=rrrspec-server-config.rb
