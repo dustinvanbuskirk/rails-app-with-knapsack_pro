@@ -14,6 +14,7 @@ machine:
 dependencies:
   pre:
     - gem install test-queue
+    - gem install knapsack_pro
 test:
   override:
     - rspec-queue spec
