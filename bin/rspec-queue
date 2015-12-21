@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ "$CIRCLE_NODE_INDEX" = "0" ]; then
+  TEST_QUEUE_RELAY_TOKEN=123 TEST_QUEUE_SOCKET=0.0.0.0:12345 bundle exec rspec-queue spec
+else
+  ssh -L 12345:localhost:12345 node0
+  TEST_QUEUE_RELAY_TOKEN=123 TEST_QUEUE_RELAY=0.0.0.0:12345 bundle exec rspec-queue spec
+fi

@@ -13,4 +13,4 @@ machine:
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: minitest-token
 test:
   override:
-    - bundle exec rspec-queue spec
+    - bin/rspec-queue
