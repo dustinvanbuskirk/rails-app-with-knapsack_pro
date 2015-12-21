@@ -11,6 +11,7 @@ machine:
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC: rspec-token
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_CUCUMBER: cucumber-token
     # KNAPSACK_PRO_TEST_SUITE_TOKEN_MINITEST: minitest-token
+    TEST_QUEUE_WORKERS: 1
 test:
   override:
     - bin/rspec-queue
