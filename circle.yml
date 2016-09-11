@@ -24,6 +24,9 @@ dependencies:
     - cd ~/gems/knapsack_pro-ruby && git branch
     - cd ~/gems/knapsack_pro-ruby && git log -n 1 | more
 test:
+  pre:
+    - bundle exec zeus start &
+
   override:
     - bundle exec rake knapsack_pro:zeus_rspec:
         parallel: true
