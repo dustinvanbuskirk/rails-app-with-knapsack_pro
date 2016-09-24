@@ -42,6 +42,9 @@ test:
     - bundle exec rake "knapsack_pro:zeus_rspec[-r rspec_junit_formatter --format RspecJunitFormatter -o $CIRCLE_TEST_REPORTS/rspec/junit.xml]":
         parallel: true
 
+    - bundle exec rake knapsack_pro:rspec:
+        parallel: true
+
     - KNAPSACK_PRO_FIXED_TEST_SUITE_SPLIT=false bundle exec rake knapsack_pro:rspec:
         parallel: true
 
