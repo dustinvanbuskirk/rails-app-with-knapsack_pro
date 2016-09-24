@@ -25,7 +25,8 @@ dependencies:
     - cd ~/gems/knapsack_pro-ruby && git log -n 1 | more
 test:
   pre:
-    - bundle exec zeus start &
+    - bundle exec zeus start:
+        background: true
 
   override:
     - knapsack_pro zeus_rspec:
