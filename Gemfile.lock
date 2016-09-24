@@ -1,7 +1,5 @@
-GIT
-  remote: git://github.com/KnapsackPro/knapsack_pro-ruby.git
-  revision: 5553490419c3c2556cdb553db47bcbb601078c09
-  branch: zeus
+PATH
+  remote: ~/Documents/github/knapsack-pro/knapsack_pro-ruby
   specs:
     knapsack_pro (0.14.0)
       rake

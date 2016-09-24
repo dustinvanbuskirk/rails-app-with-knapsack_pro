@@ -46,8 +46,7 @@ group :development, :test do
   gem 'spring'
   gem 'zeus'
 
-  #gem 'knapsack_pro', path: ENV['KNAPSACK_PRO_REPO_PATH'] || '~/Documents/github/knapsack-pro/knapsack_pro-ruby'
-  gem 'knapsack_pro', github: 'KnapsackPro/knapsack_pro-ruby', branch: 'zeus'
+  gem 'knapsack_pro', path: ENV['KNAPSACK_PRO_REPO_PATH'] || '~/Documents/github/knapsack-pro/knapsack_pro-ruby'
 end
 
 group :test do
