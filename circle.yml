@@ -23,6 +23,7 @@ dependencies:
     - cd ~/gems && git clone -b $CIRCLE_BRANCH --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git
     - cd ~/gems/knapsack_pro-ruby && git branch
     - cd ~/gems/knapsack_pro-ruby && git log -n 1 | more
+    - cd ~/gems/knapsack_pro-ruby && gem build knapsack_pro.gemspec && gem install knapsack_pro-0.13.0.gem
 test:
   pre:
     - bundle exec zeus start:
