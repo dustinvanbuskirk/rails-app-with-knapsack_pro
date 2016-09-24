@@ -29,6 +29,9 @@ test:
         background: true
 
   override:
+    - ~/gems/knapsack_pro-ruby/bin/knapsack_pro zeus_rspec:
+        parallel: true
+
     - knapsack_pro zeus_rspec:
         parallel: true
 
