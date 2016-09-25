@@ -30,7 +30,7 @@ test:
         background: true
 
   override:
-    - unset RAILS_ENV; bundle exec zeus rake knapsack_pro:rspec:
+    - unset RAILS_ENV; export RAILS_ENV=test; bundle exec zeus rake knapsack_pro:rspec:
         parallel: true
 
     - ~/gems/knapsack_pro-ruby/bin/knapsack_pro zeus_rspec:
