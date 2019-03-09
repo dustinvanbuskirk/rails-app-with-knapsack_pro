@@ -50,7 +50,9 @@ def test_files_from_queue(can_initialize_queue, commit_hash, branch, node_total,
     raise ArgumentError.new(response) if connection.errors?
     KnapsackPro::TestFilePresenter.paths(response['test_files'])
   else
-    raise ArgumentError.new("Couldn't connect with Knapsack Pro API. Response: #{response}")
+    #raise ArgumentError.new("Couldn't connect with Knapsack Pro API. Response: #{response}")
+    puts "FAILED REQUEST: Couldn't connect with Knapsack Pro API. Response: #{response}"
+    []
   end
 end
 
@@ -67,7 +69,8 @@ def create_build_subset(commit_hash, branch, node_total, node_index, test_files)
   if connection.success?
     raise ArgumentError.new(response) if connection.errors?
   else
-    raise ArgumentError.new("Couldn't connect with Knapsack Pro API. Response: #{response}")
+    #raise ArgumentError.new("Couldn't connect with Knapsack Pro API. Response: #{response}")
+    puts "FAILED REQUEST: Couldn't connect with Knapsack Pro API. Response: #{response}"
   end
 end
 
