@@ -15,10 +15,12 @@ run_builds = 10
 
 # use staging API
 #ENV['KNAPSACK_PRO_MODE'] = 'test'
+#ENV['KNAPSACK_PRO_ENDPOINT'] = 'https://api-staging.knapsackpro.com'
 #ENV['KNAPSACK_PRO_TEST_SUITE_TOKEN'] = ENV['API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING']
 
 # use production
 ENV['KNAPSACK_PRO_MODE'] = 'production'
+ENV['KNAPSACK_PRO_ENDPOINT'] = 'https://api.knapsackpro.com'
 ENV['KNAPSACK_PRO_TEST_SUITE_TOKEN'] = ENV['API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_PRODUCTION']
 
 ENV['KNAPSACK_PRO_LOG_LEVEL'] = 'warn'
