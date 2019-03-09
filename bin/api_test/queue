@@ -9,7 +9,7 @@ require 'knapsack_pro'
 # You should not run it from root repo directory because then rspec loads .rspec file.
 # We don't want to require rails_helper from .rspec file.
 
-node_total = 5
+node_total = 50
 multiple_tests_amount = 5
 run_builds = 10
 
