@@ -40,4 +40,48 @@ blocks:
       - name: rspec queue
         commands:
           - cd bin/api_test && rspec queue
-
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
+      - name: rspec queue
+        commands:
+          - cd bin/api_test && rspec queue
