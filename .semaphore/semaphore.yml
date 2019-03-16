@@ -37,51 +37,51 @@ blocks:
           - gem install rspec knapsack_pro
 
       jobs:
-      - name: rspec queue
+      - name: rspec queue 0
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 1
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 2
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 3
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 4
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 5
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 6
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 7
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 8
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 9
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 10
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 11
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 12
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 13
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 14
         commands:
           - cd bin/api_test && rspec queue
-      - name: rspec queue
+      - name: rspec queue 15
         commands:
           - cd bin/api_test && rspec queue
