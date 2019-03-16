@@ -22,49 +22,9 @@ agent:
 # commands to execute.
 # See https://docs.semaphoreci.com/article/62-concepts
 blocks:
-  - name: Setup
-    task:
-      env_vars:
-        - name: RAILS_ENV
-          value: test
-        - name: KNAPSACK_PRO_REPO_PATH
-          value: ~/gems/knapsack_pro-ruby
-      jobs:
-        - name: bundle
-          commands:
-          # Checkout code from Git repository. This step is mandatory if the
-          # job is to work with your code.
-          # Optionally you may use --use-cache flag to avoid roundtrip to
-          # remote repository.
-          # See https://docs.semaphoreci.com/article/54-toolbox-reference#libcheckout
-          - checkout
-          # Restore dependencies from cache.
-          # Read about caching: https://docs.semaphoreci.com/article/54-toolbox-reference#cache
-          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
-          # Set Ruby version:
-          - sem-version ruby 2.6.1
-          - mkdir -p ~/gems
-          - cd ~/gems && (git clone -b $SEMAPHORE_GIT_BRANCH --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git || git clone -b master --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git) && cd ~/$SEMAPHORE_GIT_DIR
-          - bundle install --jobs=4 --retry=3 --path vendor/bundle
-          # Store the latest version of dependencies in cache,
-          # to be used in next blocks and future workflows:
-          - cache store gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock) vendor/bundle
-
   - name: RSpec tests
     task:
       env_vars:
-        - name: RAILS_ENV
-          value: test
-        - name: KNAPSACK_PRO_REPO_PATH
-          value: ~/gems/knapsack_pro-ruby
-        - name: PGHOST
-          value: 127.0.0.1
-        - name: PGUSER
-          value: postgres
-        - name: KNAPSACK_PRO_ENDPOINT
-          value: https://api-staging.knapsackpro.com
-        - name: KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC
-          value: 24b9b76207013831750485653b69b868
         - name: API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING
           value: f2157cfc074e27d7d80a648966ad3e57
       # This block runs two jobs in parallel and they both share common
@@ -73,15 +33,7 @@ blocks:
       prologue:
         commands:
           - checkout
-          - cache restore gems-$SEMAPHORE_GIT_BRANCH-$(checksum Gemfile.lock),gems-$SEMAPHORE_GIT_BRANCH-,gems-master-
-          # Start Postgres database service.
-          # See https://docs.semaphoreci.com/article/54-toolbox-reference#sem-service
-          #- sem-service start postgres
           - sem-version ruby 2.6.1
-          - mkdir -p ~/gems
-          - cd ~/gems && (git clone -b $SEMAPHORE_GIT_BRANCH --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git || git clone -b master --single-branch git@github.com:KnapsackPro/knapsack_pro-ruby.git) && cd ~/$SEMAPHORE_GIT_DIR
-          #- bundle install --jobs=4 --retry=3 --path vendor/bundle
-          #- bundle exec rake db:setup
           - gem install rspec knapsack_pro
 
       jobs:
