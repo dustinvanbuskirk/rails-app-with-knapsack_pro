@@ -65,6 +65,8 @@ blocks:
           value: https://api-staging.knapsackpro.com
         - name: KNAPSACK_PRO_TEST_SUITE_TOKEN_RSPEC
           value: 24b9b76207013831750485653b69b868
+        - name: API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING
+          value: f2157cfc074e27d7d80a648966ad3e57
       # This block runs two jobs in parallel and they both share common
       # setup steps. We can group them in a prologue.
       # See https://docs.semaphoreci.com/article/50-pipeline-yaml#prologue
@@ -82,10 +84,7 @@ blocks:
           - bundle exec rake db:setup
 
       jobs:
-      - name: Node 0 - Knapsack Pro
+      - name: rspec queue
         commands:
-          - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=0 bundle exec rake knapsack_pro:queue:rspec
+          - cd bin/api_test && rspec queue
 
-      - name: Node 1 - Knapsack Pro
-        commands:
-          - KNAPSACK_PRO_CI_NODE_TOTAL=2 KNAPSACK_PRO_CI_NODE_INDEX=1 bundle exec rake knapsack_pro:queue:rspec
