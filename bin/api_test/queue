@@ -122,7 +122,7 @@ run_builds.times do |index_run|
 
   describe "Ensure queue API returns all test files without duplicates. Run #{index_run}" do
     it do
-      expect(all_test_files.map { |t| t[:path] }.sort).to eq expected_test_files
+      expect(all_test_files.map { |t| t[:path] }.sort).to match_array expected_test_files
     end
   end
 end
