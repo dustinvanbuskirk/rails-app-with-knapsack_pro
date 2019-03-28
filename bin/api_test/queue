@@ -10,7 +10,7 @@ require 'knapsack_pro'
 # We don't want to require rails_helper from .rspec file.
 
 node_total = 10
-multiple_tests_amount = 20
+multiple_tests_amount = 100
 run_builds = 50
 
 # use staging API
