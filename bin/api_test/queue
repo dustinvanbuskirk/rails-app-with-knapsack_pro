@@ -11,7 +11,7 @@ require 'knapsack_pro'
 
 node_total = 10
 multiple_tests_amount = 100
-run_builds = 50
+run_builds = 1
 
 # use staging API
 ENV['KNAPSACK_PRO_MODE'] = 'test'
