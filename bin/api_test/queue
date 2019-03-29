@@ -17,7 +17,8 @@ run_builds = 50
 ENV['KNAPSACK_PRO_MODE'] = 'test'
 #ENV['KNAPSACK_PRO_ENDPOINT'] = 'https://api-staging.knapsackpro.com'
 ENV['KNAPSACK_PRO_ENDPOINT'] = 'https://api-staging-heroku.knapsackpro.com'
-#ENV['KNAPSACK_PRO_ENDPOINT'] = 'http://api-staging-heroku.knapsackpro.com'
+ENV['KNAPSACK_PRO_TEST_SUITE_TOKEN'] = ENV['API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING']
+
 ENV['KNAPSACK_PRO_TEST_SUITE_TOKEN'] = ENV['API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING']
 
 # use production
