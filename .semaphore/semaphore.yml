@@ -27,6 +27,8 @@ blocks:
       env_vars:
         - name: API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_STAGING
           value: f2157cfc074e27d7d80a648966ad3e57
+        - name: API_TEST_KNAPSACK_PRO_TEST_SUITE_TOKEN_PRODUCTION
+          value: 681f40cbe788f3bf05a6ccac7d9a8d15
       # This block runs two jobs in parallel and they both share common
       # setup steps. We can group them in a prologue.
       # See https://docs.semaphoreci.com/article/50-pipeline-yaml#prologue
